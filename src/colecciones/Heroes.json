@@ -1,0 +1,40 @@
+[
+    {
+        "name":"Jacky Yi",
+        "number":1,
+        "description":
+        "Valiente, tiene poderes que le permiten vigilar y cuidar la noche",
+        "type":["magic","dream"],
+        "look":{
+            "color":["navy","purple"]
+            },
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/AlejandraTarello%2F1%20%20BLUCZ%20C-INSIGNE%20BNB%202.60.jpg?alt=media&token=ff7c13f6-007e-4d8c-934e-24456ee8c70e",
+        "img":"https://gateway.pinata.cloud/ipfs/QmPhcCLuyXNNPmSYWk4GKvkwdoFdt8nmyacBi9s6F1NR55/1%20%20BLUCZ%20C-INSIGNE%20BNB%202.60.jpg"      
+    },
+    {
+        "name":"Joyce",
+        "number":2,
+        "type":["magic","chaos"],
+        "look":{
+            "color":["darkgreen","navy"]
+
+            },
+        "description":
+        "Sus poderes le permiten defender a la naturaleza",
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/AlejandraTarello%2F2%20GRE%20C-INSIGNE%20BNB%201.50.jpg?alt=media&token=d7400595-b7e9-4eef-8af8-06b0dd8ff8d2",
+        "img":"https://gateway.pinata.cloud/ipfs/QmPhcCLuyXNNPmSYWk4GKvkwdoFdt8nmyacBi9s6F1NR55/2%20GRE%20C-INSIGNE%20BNB%201.50.jpg"
+    },
+    {
+        "name":"Roy",
+        "type":["magic","astro"],
+        "look":{
+            "color":["darkmagenta","silver"]
+
+            },
+        "description":
+        "Pacifico, su pasado es un misterio para todos, Roy tiene la virtud de cuidar y proteger al planeta",
+        "number":3,
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/AlejandraTarello%2F3%20GUID%20C-INSIGNE%20BNB%202.5.jpg?alt=media&token=971a9f4e-70ae-4564-9d41-182fd229f360",
+        "img":"https://gateway.pinata.cloud/ipfs/QmPhcCLuyXNNPmSYWk4GKvkwdoFdt8nmyacBi9s6F1NR55/3%20GUID%20C-INSIGNE%20BNB%202.5.jpg"
+    }
+]

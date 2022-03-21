@@ -1,0 +1,8 @@
+$alturaCool:120px;
+
+.caca{
+
+    &:hover{
+        height: $alturaCool;
+    }
+}

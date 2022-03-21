@@ -1,0 +1,31 @@
+.div_address_main{
+    background: whitesmoke;
+    border-radius: 10%;
+    display: block;
+    margin: auto;
+    width: fit-content;
+    padding: 1%;
+    margin-top: 2%;
+}
+
+
+.h1_address_titulo{
+    color: black;
+    font-size: 3rem;
+    display: block;
+    margin-top: 2%;
+}
+
+.input_address{
+    color: black;
+    padding: 1%;
+    font-size: 2.1rem;
+    border-radius: 10%;
+    border: 1px solid salmon;
+    width: 60%;
+    display: block;
+    margin: auto;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+

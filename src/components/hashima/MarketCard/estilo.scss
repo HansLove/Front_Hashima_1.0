@@ -1,0 +1,144 @@
+
+.card_image{
+  width: 50%;
+  min-height: 26vh;
+}
+
+.card__caption {
+  background-color: rgba(19, 17, 17, 0.63);
+  padding: 1em;
+  position: relative;
+  border-radius: 0 0 3px 3px;
+}
+
+
+
+.div_block_number_card{
+  // transition: all 2s ease-out;
+  visibility: hidden;
+
+}
+
+.main_div_battle_card:hover .div_block_number_card{
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  animation: in_1 1s ease-in-out;
+
+}
+
+.div_price_battle_card{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border:chartreuse 1px solid;
+  font-size: 3rem;
+  border-radius: 5%;
+  background: linear-gradient(-30deg,black,transparent);
+}
+
+@keyframes in_1 {
+  0%{
+    opacity: 0;
+    visibility: collapse;
+    margin-top: -1%;
+  }
+
+  100%{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 1%;
+  }
+}
+
+.card__name {
+  visibility: hidden;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main_div_battle_card:hover .card__name{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: block;
+  margin: auto;
+  text-align: center;
+  visibility: visible;
+  width: 45%;
+  letter-spacing: 0.05em;
+  animation: ji 0.5s ease-in-out;
+  // transition: all;
+  @media (min-width: 360px) { 
+    font-size: 2rem;
+  }
+  @media (min-width: 1000px) { 
+    font-size: 1.7rem;
+  }
+
+
+}
+
+
+
+
+.div_original_card{
+  color:goldenrod;
+  background:linear-gradient(-45deg,gold,transparent,goldenrod);
+  height: 3vh;
+  padding: 1% 2%;
+  border-radius: 26%;
+  font-size: 0.5rem;
+  vertical-align: top;
+  color: transparent;
+  background-size: 400% 400%;
+  animation: animacion_origin 7s ease-in-out infinite alternate;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
+
+
+
+  &:hover{
+    transition: all 1s ease-in-out;
+    border: 1px solid rgba(255, 255, 0, 0.5);
+  }
+
+  @keyframes animacion_origin {
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position:100% 50%;
+    }
+   
+    100%{
+      background-position: 0% 50%;
+    }
+  }
+}
+
+
+.div_original_card img{
+  display: inline-block;
+  margin: auto;
+}
+
+
+
+.div_datos_hashima{
+  display: none;
+  margin-top:auto;
+  width:40%;
+  margin-bottom:2%;
+  display:block;
+  margin-left:auto;
+}
+
+.div_types_card{
+  visibility: hidden;
+}
+
+.main_div_battle_card:hover .div_types_card{
+  visibility: visible;
+  // background: red;
+
+}
+
+

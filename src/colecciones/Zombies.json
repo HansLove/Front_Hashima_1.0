@@ -1,0 +1,20 @@
+[
+    {
+        "name":"Crazy Zombie",
+        "number":1,
+        "img":"https://gateway.pinata.cloud/ipfs/QmcqAbo65qVUWLrXskdsj4sYU2wv6E7dqwyQhyU1hwbh44?preview=1"
+       
+    },
+    {
+        "name":"'El loco'",
+        "number":2,
+        "img":"https://gateway.pinata.cloud/ipfs/Qma4fqQPk1RU53sgW5eESWo8o1DmE1HNx8BzdMw35DiVPn?preview=1"
+       
+    },
+    {
+        "name":"Cool Zomboy",
+        "number":3,
+        "img":"https://gateway.pinata.cloud/ipfs/QmU726GX51nZJXsHM8FJpTm3VS5Q4TerMUJuETm7nnNVrM?preview=1"
+       
+    }
+]

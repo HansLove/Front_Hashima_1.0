@@ -1,0 +1,71 @@
+
+[
+    {
+        "name":"Tragedia",
+        "number":1,
+        "description":"Hashima NFT by Chester",
+        "type":["fire","astro"],
+        "look":{
+            "color":["navy","purple"]
+            },
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/Chester%2Fches_1.jpeg?alt=media&token=5d28607b-5307-4e93-95dd-bd24744b623f",
+        "img":"https://gateway.pinata.cloud/ipfs/QmfAWiK9RDL165E2gEpqGD5uynqV92hcgedGh8AnVdgpWA/ches_1.jpeg"
+    },
+
+    {
+        "name":"Mr. Rat Honest",
+        "number":2,
+        "type":["magic","chaos"],
+        "look":{
+            "color":["DarkSlateGray","navy"]
+
+            },
+        "description":"Created by Hashit Chester",
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/Chester%2Fches_2.jpeg?alt=media&token=93d41e86-50df-44fd-bab8-a5d1f158d705",
+        "img":"https://gateway.pinata.cloud/ipfs/QmfAWiK9RDL165E2gEpqGD5uynqV92hcgedGh8AnVdgpWA/ches_2.jpeg"
+    },
+
+    {
+        "name":"Berni Baduck",
+        "type":["magic","astro"],
+        "look":{
+            "color":["DarkSlateGray","Beige"]
+
+            },
+        "description":
+        "With the help of Carlo, Berni is the perfect manager.",
+        "number":3,
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/Chester%2Fches_3.jpeg?alt=media&token=59eee8e9-c818-444c-8c1e-9590d2d08d6b",
+        "img":"https://gateway.pinata.cloud/ipfs/QmfAWiK9RDL165E2gEpqGD5uynqV92hcgedGh8AnVdgpWA/ches_3.jpeg"
+    },
+    {
+        "name":"Another Lider",
+        "type":["magic","astro"],
+        "look":{
+            "color":["darkmagenta","silver"]
+
+            },
+        "description":
+        "Pacifico, su pasado es un misterio para todos, Roy tiene la virtud de cuidar y proteger al planeta",
+        "number":3,
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/Chester%2Fches_4.jpeg?alt=media&token=05f484c1-0514-4e93-b273-bd46b403259d",
+        "img":"https://gateway.pinata.cloud/ipfs/QmfAWiK9RDL165E2gEpqGD5uynqV92hcgedGh8AnVdgpWA/ches_4.jpeg"
+    },
+
+    {
+        "name":"Not what you are thinking",
+        "type":["magic","astro"],
+        "look":{
+            "color":["darkmagenta","silver"]
+
+            },
+        "description":
+        "Pacifico, su pasado es un misterio para todos, Roy tiene la virtud de cuidar y proteger al planeta",
+        "number":3,
+        "img":"https://gateway.pinata.cloud/ipfs/QmfAWiK9RDL165E2gEpqGD5uynqV92hcgedGh8AnVdgpWA/ches_5.jpeg"
+        
+    }
+
+
+
+]

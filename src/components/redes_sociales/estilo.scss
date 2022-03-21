@@ -1,0 +1,36 @@
+.div_navbar_main{
+    display: flex;
+    width:30%;
+    margin: auto;
+    margin-top: 3%;
+    // @media only screen and(min-width: 360px) { 
+    //     display: none;
+    // }
+    
+}
+
+
+
+
+.li_navbar{
+    display: inline-block;
+    margin: auto;
+    margin-left: 10%;
+}
+
+.img_navbar{
+    display: inline-block;
+    margin-left: 8%;
+    width: 10%;
+    transition: all 0.5s ease-in-out;
+
+    
+}
+
+.img_navbar:hover{
+    transition: all 0.5s ease-in-out;
+    width: 11%;
+    border: 1px solid gray;
+    border-radius: 25%;
+    padding: 1% 1%;
+}

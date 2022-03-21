@@ -1,0 +1,15 @@
+
+.main_div_workshop{
+  display: inline-block;
+  background: transparent;
+  width: 100%;
+  margin-left: 1%;
+  margin-bottom: 20%;
+}
+
+.mensaje_error_2{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display: block;
+  color: green;
+  font-size: 4rem;
+}

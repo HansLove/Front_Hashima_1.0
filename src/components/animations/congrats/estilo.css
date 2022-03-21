@@ -1,0 +1,23 @@
+.p_23 {
+    position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(148, 142, 142), #fff, rgb(37, 8, 41));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 7s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }

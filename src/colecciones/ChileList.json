@@ -1,0 +1,27 @@
+[
+    {
+        "name":"Chile for Taco",
+        "number":1,
+        "type":["fire","chaos"],
+        "look":{
+            "color":["red","red"]
+            },
+        "img":"https://gateway.pinata.cloud/ipfs/QmQZZAcLGpLvGa9pqjhrJvWaonvrQKtk91dxVWYoRHvmZE/1%20MEXICAN%20CHIL%C2%B4S%20C-CHIL%C2%B4SMEX%20BNB%202.95.jpg"
+    },
+    {
+        "name":"Pre-Chili",
+        "type":["fire","chaos"],
+        "look":{
+            "color":["deepskyblue","forestgreen"]
+            },
+        "number":2,
+        "img":"https://gateway.pinata.cloud/ipfs/QmQZZAcLGpLvGa9pqjhrJvWaonvrQKtk91dxVWYoRHvmZE/2%20TROGLO%20CHIL%C2%B4S%20C-CHIL%C2%B4SMEX%20BNB%202.jpeg"},
+    {
+        "name":"Too Spicy",
+        "type":["fire","chaos"],
+        "look":{
+            "color":["deepskyblue","forestgreen"]
+            },
+        "number":3,
+        "img":"https://gateway.pinata.cloud/ipfs/QmQZZAcLGpLvGa9pqjhrJvWaonvrQKtk91dxVWYoRHvmZE/3%20GANGSTER%20CHIL%C2%B4S%20C-CHIL%C2%B4SMEX%20BNB%202.60.jpg"}
+]

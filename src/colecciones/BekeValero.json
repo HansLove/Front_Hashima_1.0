@@ -1,0 +1,40 @@
+[
+    {
+        "name":"Someone special",
+        "number":1,
+        "description":"Hashima NFT by Beke Valero. Be the pain ",
+        "type":["fire","astro"],
+        "look":{
+            "color":["navy","purple"]
+            },
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/BekeValero%2Fsomeone_special_1.jpeg?alt=media&token=ee6377e8-e2c9-4fe5-9056-8e267478815b",
+        "img":"https://gateway.pinata.cloud/ipfs/QmPf3NnqmbJJi84u8N4tW6iMVTNQFBoW4eZHxCRbxx41Xv/someone_special_1.jpeg"      
+    },
+    {
+        "name":"The world is fuckig yours",
+        "number":2,
+        "type":["magic","chaos"],
+        "look":{
+            "color":["darkgreen","skyblue"]
+
+            },
+        "description":
+        "Obra creada por el Hashist Mexicano Beke Valero",
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/BekeValero%2FNFT%203%20Beke%CC%81%20.jpeg?alt=media&token=9f0e95e3-8406-49de-9c55-72611ba7881c",
+        "img":"https://gateway.pinata.cloud/ipfs/QmPf3NnqmbJJi84u8N4tW6iMVTNQFBoW4eZHxCRbxx41Xv/NFT%203%20Beke%CC%81%20.jpeg"
+    },
+
+    {
+        "name":"Pastel",
+        "type":["magic","astro"],
+        "look":{
+            "color":["darkmagenta","red"]
+
+            },
+        "description":
+        "Pastel unkown artist",
+        "number":3,
+        "fire":"https://firebasestorage.googleapis.com/v0/b/hashimas.appspot.com/o/BekeValero%2Ftest%201%20paste%20up_1.jpeg?alt=media&token=6adf8ae3-93bd-48f7-b4a1-49b519ab1435",
+        "img":"https://gateway.pinata.cloud/ipfs/QmPf3NnqmbJJi84u8N4tW6iMVTNQFBoW4eZHxCRbxx41Xv/test%201%20paste%20up_1.jpeg"
+    }
+]

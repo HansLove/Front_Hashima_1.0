@@ -1,0 +1,82 @@
+
+.img_showcase{
+    display: block;
+    margin: auto;
+    width: 65%;
+}
+
+.h1_name_showcase{
+    font-size: 4rem;
+    text-shadow: 1px 1px 2px black;
+    width: fit-content;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    margin: auto;
+}
+
+.h1_nft_number{
+    font-size: 4.5rem;
+    display: block;
+    margin-right: auto;
+    margin-left: 10%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: fit-content;
+
+}
+
+.p_showcase{
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px black;
+
+}
+
+.h3_precio_showcase_numero{
+    text-align: end;
+    font-size: 4.5rem;
+    margin-left: 1%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.div_precio_showcase{
+    border: 2px solid green;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 50%;
+    border-radius: 15%;
+    // background: linear-gradient(45deg,green,olive);
+}
+
+.h1_address_owner{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    margin-left: 5%;
+    overflow: hidden;
+}
+
+.h2_block_number_showcase{
+    width: fit-content;
+    display: inline-block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+}
+
+.img_original_showcase{
+    margin-left: 1%;
+    background: linear-gradient(45deg,gold,transparent,gold,transparent,gold);
+    border-radius: 20%;
+}
+
+.h1_number_stars{
+    display: none;
+    
+}
+.div_estrellas_showcase:hover .h1_number_stars{
+    display: inline-block;
+    margin-left: 1%;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    opacity: 0.9;
+}
+

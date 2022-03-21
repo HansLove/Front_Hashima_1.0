@@ -1,0 +1,263 @@
+
+
+
+.div_block_number_2{
+    transition: all 1s ease-in-out 0.5s;
+    margin-top: 2%;
+    visibility: visible;
+    margin-left: 4%;
+    visibility: visible;
+    display: inline-block;
+    width: 100%;
+    animation: anim 1s ease-in-out 0.5;
+
+    @keyframes anim {
+        0%{
+            opacity: 0;
+            margin-left: 4%;
+            margin-top: 1%;
+        }
+        40%{
+            opacity: 0.3;
+            
+
+        }
+        80%{
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+            margin-top: 1%;
+        }
+    }
+
+
+    
+}
+
+.imagen_hashima_123{
+    width: 60%;
+    display: block;
+    // background: red;
+    margin: auto;
+    transition: all ease-in-out 1s;
+    min-height: 40vh;
+    max-height: 45vh;
+    animation: anim 0.5s ease-in-out;
+    @keyframes anim {
+        0%{
+            opacity: 0;
+            width: 50%;
+        }
+        50%{
+            width: 70;
+            opacity: 0.6;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+}
+
+
+.div_precio_hashima_card{
+    display: none;
+    @media (max-width:480px) {
+        display: inline-block;
+        max-width: 35%;
+        
+    }
+    @media (max-width:1024px) {
+        display: inline-block;
+        max-width: 35%;
+        
+    }
+}
+
+.div_main_hashima_card:hover .div_precio_hashima_card{
+    transition: all 2s ease-in-out;
+    /* visibility: visible; */
+    display: inline-block;
+    width:fit-content;
+    max-width: 35%;
+    /* margin-left: auto; */
+    animation: in_1 2s ease-in-out;
+}
+
+
+
+
+@keyframes in_1 {
+    0%{
+      opacity: 0;
+      visibility: collapse;
+      margin-top: -2%;
+      z-index: -1;
+    }
+    80%{
+        opacity: 0.2;
+    }
+    100%{
+      z-index: 6;
+      visibility: visible;
+      opacity: 1;
+      margin-top: 1%;
+    }
+  }
+  
+  
+
+.div_hashima_price_establishment{
+    width: 100%;
+    /* background: red; */
+    display: inline-block;
+    // transition: 1s all ease-in-out;
+    vertical-align: top;
+    margin-top: 3%;
+    animation:in_1 0.5s ease-in-out;
+}
+
+.input_nice_1{
+    border-radius: 5%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 1%;
+    margin-left: 1%;
+    text-align: center;
+    border: none;
+}
+
+.name_hashima_card_1{
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: snow;
+}
+
+
+.div_main_structure{
+    transition: ease-in-out 1s all;
+    display: flexbox;
+    width:100%;
+
+}
+
+
+.text_nonce_hashima{
+    visibility: collapse;
+    color: rgba(245, 245, 245, 0.315);
+    font-size: 4rem;
+
+}
+
+.div_main_hashima_card:hover .text_nonce_hashima{
+    transform: rotate(130deg);
+    visibility: visible;
+    margin-right:auto ;
+    // overflow: auto;
+    // overflow-y:scroll;
+    width:10%;
+    z-index: -2;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    font-size:1.2rem;
+    transition: 0.5s ease-in-out all 1s;
+}
+
+.imagen_estampado_tolentino{
+    display: none;
+}
+
+.div_main_hashima_card:hover .imagen_estampado_tolentino{
+    opacity: 0.1;
+    // overflow-y: auto;
+    display:flex;
+    position: absolute;
+    width: 20%;
+    // margin-right:auto;
+    transition: all 0.5s ease-in-out;
+    // margin-top: auto;
+    z-index: 0;
+    transition: all 0.5s ease-in-out 1s;
+
+}
+
+
+.boton_carta_disponible{
+    font-size: 1.8rem;
+    color: whitesmoke;
+    margin-bottom: 1%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 15%;
+
+    @media (max-width:380px) {
+        font-size: 1rem;
+        
+    }
+
+    @media (max-width:480px) {
+        font-size: 1.2rem;
+        
+    }
+
+    @media (max-width:1024px) {
+        font-size: 1.8rem;
+
+        
+    }
+}
+
+.button_disponible_card{
+    display: inline-block;
+    padding: 2% 0%;
+    margin-left: auto;
+    border-radius: 10%;
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: whitesmoke;
+    @media (min-width:320px) and (max-width:1000px){
+            font-size: 1rem;
+            // color: palevioletred;
+            padding: 1% 1%;
+    }
+}
+
+.div_bottom_collection_card{
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.div_main_hashima_card:hover .div_bottom_collection_card{
+    width: 100%;
+    display: flex;
+    visibility: visible;
+    margin-top: 10%;
+    height: 7vh;
+    animation:caca 1.5s ease-in-out;
+
+
+    @keyframes caca {
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 0.4;
+        }
+        100%{
+            opacity: 1;
+        }
+        
+    }
+}
+
+
+.div_abajo_collection_card{
+    display: none;
+}
+
+.div_main_hashima_card:hover .div_abajo_collection_card{
+    display: inline-block;
+    width: 50%;
+}

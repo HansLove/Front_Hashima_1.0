@@ -1,0 +1,77 @@
+.minero1{
+    background: linear-gradient(45deg,sienna,rebeccapurple,silver);
+    border-radius: 5%;
+    display: block;
+    padding: 2.5%;
+    transition: all 0.5s ease-in-out;
+
+
+
+    &:hover{
+        transition: all 1s ease-in-out;
+        background: linear-gradient(45deg,saddlebrown,rebeccapurple,snow);
+        border-radius: 7%;
+
+    }
+}
+
+.nice_p{
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: block;
+    margin: auto;
+    width: fit-content;
+
+
+    @keyframes animacion_3 {
+        
+    }
+
+}
+
+
+.nice_p_anim{
+    font-size: 1.6rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: block;
+    margin: auto;
+    animation: animacion_3 5s ease alternate infinite;
+    width: 80%;
+    
+
+    @keyframes animacion_3 {
+        0%{
+            color: white;
+        }
+        50%{
+            color: silver;
+        }
+        100%{
+            color:snow;
+        }
+        
+    }
+
+}
+
+
+
+.button_verde_1{
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    margin-left: auto;
+    text-decoration: none;
+    text-align: center;
+    background: green;
+    border-radius: 10%;
+    padding: 5% 0%;
+    font-size: 1.7rem;
+    color:whitesmoke;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    &:hover{
+        background: linear-gradient(45deg,green,lightgreen);
+        
+    }
+}
