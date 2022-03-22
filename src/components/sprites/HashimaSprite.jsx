@@ -21,7 +21,7 @@ import React, { useEffect, useState } from 'react'
 // import Nakas from '../../colecciones/Pex.json'
 
 import { SpriteAnimator } from 'react-sprite-animator'
-import { DatosHashima } from '../utils/Utils'
+import { DatosHashima, DatosHashimaByName } from '../utils/Utils'
 
 function HashimaSprite({scale=0,item,id=1,data={},
   width='100%',display='block',verticalAlign='top',borderRadius='0%'
@@ -96,7 +96,12 @@ function HashimaSprite({scale=0,item,id=1,data={},
   
     ]
 
-    if(item==undefined)return array[id]
+    if(item==undefined){
+      array[id].sprite=DatosHashimaByName(array[id].name).fire
+      return array[id]
+    }
+
+
     for (let index = 0; index < array.length; index++) {
       const element = array[index];
       

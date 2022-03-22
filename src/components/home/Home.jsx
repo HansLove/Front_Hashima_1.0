@@ -15,7 +15,7 @@ function Home() {
             <div>
 
                 <div style={{border:'1px solid gray',width:'49%',display:'inline-block',height:'33vh'}}>
-                <HashimaSprite display='inline-block' scale={6} width='45%' />
+                <HashimaSprite display='inline-block' scale={6} width='45%' id={1}/>
                 </div>
 
                 <div style={{border:'1px solid gray',width:'49%',display:'inline-block',height:'33vh'}}>

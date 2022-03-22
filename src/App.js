@@ -17,7 +17,6 @@ import Collection from './components/collection/Collection';
 import BeMiner from './components/beMiner/BeMiner';
 import MarketPlace from './components/marketplace/MarketPlace';
 import {dameCurrentChain, prenderCambioCadena, prenderCambioCuenta } from './components/blockchain/Blockchain';
-import Planeta from '../src/components/image/planet_1.mov'
 import { actulizarCuenta, loadHashima } from './components/blockchain/Pago';
 import ShowCase from './components/showcase/ShowCase';
 
@@ -52,16 +51,16 @@ function App() {
 
   }, [chainId])
 
-  const Video=()=>{
-    return<video 
-    className='video_fondo'
-    autoPlay 
-    loop muted>
-        <source src={Planeta} 
-        z></source>
+  // const Video=()=>{
+  //   return<video 
+  //   className='video_fondo'
+  //   autoPlay 
+  //   loop muted>
+  //       <source src={Planeta} 
+  //       z></source>
           
-    </video>
-  }
+  //   </video>
+  // }
   
 
   return (
