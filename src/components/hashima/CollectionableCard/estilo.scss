@@ -1,6 +1,4 @@
 
-
-
 .div_block_number_2{
     transition: all 1s ease-in-out 0.5s;
     margin-top: 2%;
@@ -82,7 +80,7 @@
     width:fit-content;
     max-width: 35%;
     /* margin-left: auto; */
-    animation: in_1 2s ease-in-out;
+    animation: in_1 1s ease-in-out;
 }
 
 
@@ -95,11 +93,11 @@
       margin-top: -2%;
       z-index: -1;
     }
-    80%{
+    50%{
         opacity: 0.2;
     }
     100%{
-      z-index: 6;
+      z-index: 1;
       visibility: visible;
       opacity: 1;
       margin-top: 1%;

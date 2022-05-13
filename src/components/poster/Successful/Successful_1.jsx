@@ -5,8 +5,7 @@ function Successful_1() {
     return (
         <div id="container">
             <a 
-            className='a_123'
-            >
+            className='a_123'>
             Successful Purchase
             </a>
 

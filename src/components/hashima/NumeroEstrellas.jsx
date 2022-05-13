@@ -1,10 +1,16 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa'
 import styled from 'styled-components';
+import { SeparadorDecimal } from '../../utils/SeparadorDecimal';
 
 
-function NumeroEstrellas({item,color='yellow',marginLeft='10%',
-        display='block',width='90%',fontSize='1.5rem'
+function NumeroEstrellas({
+    item=[],
+    color='yellow',
+    marginLeft='10%',
+    display='block',
+    width='90%',
+    fontSize='1.2rem',size='35'
 }) {
 
     const Estrellas=(_number)=>{
@@ -55,11 +61,14 @@ function NumeroEstrellas({item,color='yellow',marginLeft='10%',
 
     `
   return <Div>
-  {Estrellas(item['stars']*2).map((_,index)=>
+  {Estrellas(item['stars']!=undefined?item['stars']*2:item[7]*2).map((_,index)=>
     <FaStar key={index} 
     style={{marginLeft:'1%'}}
-    size={item['sign']?35:25} color={item['sign']?color:'gold'}/>)}
-    <p style={{fontSize:fontSize}}>{item['nonce']}</p>
+    size={size} 
+    color={item['sign']?color:'gold'}
+    />)}
+    <p style={{fontSize:fontSize}}>
+        {SeparadorDecimal(item['nonce']!=undefined?item['nonce']:item[9])}</p>
 
 </Div>
 }

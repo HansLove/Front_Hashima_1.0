@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Web3 from 'web3'
-import { dameCurrentChain } from '../blockchain/Blockchain';
-import { ObjetoHashima, transferirHashima } from '../blockchain/HashimaContract';
-import { actulizarCuenta, loadHashima } from '../blockchain/Pago';
+import { ObjetoHashima} from '../../blockchain/HashimaContract';
+import { actulizarCuenta } from '../../blockchain/Pago';
+import { Input } from '../Input/Input';
 
-const Input=styled.input`
-font-size: 2rem;
-width: 90%;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-border-radius: 10%;
-color: whitesmoke;
-/* border: none; */
-background: linear-gradient(-45deg,black,transparent);
-padding: 3% 1%;
-text-align: center;
-`
+
 
 function TransferHashima({id,Reload=()=>{}}) {
 
@@ -46,6 +36,8 @@ function TransferHashima({id,Reload=()=>{}}) {
       transition: all 1s ease-in-out;
     }
   `  
+
+  
   const ButtonConfirm=styled.button`
   background: linear-gradient(-45deg,olive,green);
   color: white;

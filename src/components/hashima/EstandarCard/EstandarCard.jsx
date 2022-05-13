@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ObjetoHashima } from '../../blockchain/HashimaContract';
-import WorkShop from '../../workshop/WorkShop';
-import BotonComprar from '../BotonComprar';
-import './estilo.scss'
+import WorkShop from '../../../pages/workshop/WorkShop';
+
+
 
 function EstandarCard({item,color1='red',color2='silver'}) {
     

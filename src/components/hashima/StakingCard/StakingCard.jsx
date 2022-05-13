@@ -1,96 +1,142 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { actulizarCuenta } from '../../blockchain/Pago';
-import { ObjetoStaking } from '../../blockchain/Staking';
-// import Petunia from '../../image/petu_1.png'
-import Hashi from '../../image/hashi_1.png'
-import { DatosHashima } from '../../utils/Utils';
+import { TransformWei } from '../../../blockchain/Blockchain';
+import { actulizarCuenta } from '../../../blockchain/Pago';
+import { ObjetoStaking } from '../../../blockchain/Staking';
+import Hashi from '../../../image/hashi_1.png'
+import { SeparadorDecimal } from '../../../utils/SeparadorDecimal';
+import { DatosHashima } from '../../../utils/Utils';
+import Loading1 from '../../animations/loading/Loading1';
+import Button from '../../Button/Button';
+import RetiroExitoso from '../../RetiroExitoso/RetiroExitoso';
+import HashimaSprite from '../../sprites/HashimaSprite';
+import { Div, Div2 } from '../../StyledDiv/StyledDiv';
 import NumeroEstrellas from '../NumeroEstrellas';
 
-function StakingCard({item}) {
+function StakingCard({item=[]}) {
 
     const [staking, setstaking] = useState(0);
-    const [balanceHashis, setBalance] = useState(0);
-
+    const [loading, setLoading] = useState(false);
+    const [retiroExitoso, setRetiroExitoso] = useState(false);
+    let con=new ObjetoStaking()
+    
 
     useEffect(async() => {
-        let con=new ObjetoStaking()
+        
         await con.loadStaking()
-        let acc=await actulizarCuenta()
-        let reward=await con.calculateReward(acc,item[0])
-        let onStaking=await con.isStaking(item[0])
-        console.log('on staking: ',onStaking)
-        setstaking(reward)
-        await BalanceHashis()
+        await CalcularReward()
+
+        async function ciclo(){
+          // do whatever you like here
+          await CalcularReward()
+          setTimeout(ciclo, 15000);
+        }
+        
+        ciclo();
+        
 
     }, []);
 
-    const Div=styled.div`
-        display: block;
-        background-image:${props=>props.color1};background-image:  
-        radial-gradient(at 79% 54%, ${props=>props.color1} 0, transparent 55%),  
-        radial-gradient(at 62% 31%, hsla(5,85%,73%,1) 0, transparent 73%),  
-        radial-gradient(at 74% 89%, ${props=>props.color2} 0, transparent 58%),  
-        radial-gradient(at 95% 16%, hsla(188,97%,73%,1) 0, transparent 56%),  
-        radial-gradient(at 3% 37%, hsla(156,63%,71%,1) 0, transparent 48%),  
-        radial-gradient(at 30% 5%, ${props=>props.color1} 0, transparent 40%),  
-        radial-gradient(at 78% 18%, ${props=>props.color2} 0, transparent 50%);
-        border-radius: 10%;
-        width: 90%;
-        margin-left: 1%;
-        margin-top: 1%;
-        min-height: 30vh;
-        
-    `   
+
+
+  const CalcularReward=async()=>{
+    let acc=await actulizarCuenta()
+    let reward=await con.calculateReward(acc,item[0],'stakingCard')
+    setstaking(reward)
+  }
  
   const CollectStake=async()=>{
-    let con=new ObjetoStaking()
+    setLoading(true)
     await con.loadStaking()
-    await con.collect(item[0])  
+    let res=await con.collect(item[0])  
+    if(res){
+      setLoading(false)
+      setstaking(0)
+    }
   }
 
   const Retirar=async()=>{
-    let con=new ObjetoStaking()
+    setLoading(true)
     await con.loadStaking()
-    await con.retirarStake(item[0])  
+    let res=await con.retirarStake(item[0])  
+    if(res){
+      setLoading(false)
+      setRetiroExitoso(true)
+    }
   }
 
 
-  const BalanceHashis=async()=>{
-    let con=new ObjetoStaking()
-    await con.loadStaking()
-    let res=await con.balanceHashi()   
-    // console.log('balance hashi: ',res) 
-    setBalance(res)
 
-  }
-  return <Div     
-  color1={DatosHashima(item[2]).look.color[0]} 
-  color2={DatosHashima(item[2]).look.color[1]}>
-    <img style={{width:'99%',display:'block',borderRadius:'5%'}} src={item[2]}/>
-    <NumeroEstrellas color='gold' item={item}/>
 
-    {/* <p style={{color:'red'}}>{balanceHashis}</p> */}
+  return <Div2
+      style={{width:'25%',display:'inline-block'}}     
+      color1={DatosHashima(item[2]).look.color[0]} 
+      color2={DatosHashima(item[2]).look.color[1]}>
 
-      <div style={{width:'fit-content',display:'block',
-      marginBottom:'2%',margin:'auto'}}>
+      {!retiroExitoso?
+      <>
+      
+      <Button 
+      padding='0%'
+      secundaryText='Take out Hashima from staking'
+      color1='firebrick'
+      display='flex'
+      marginLeft='15%'
+      margin='auto'
+      color2='black'
+      onClick={Retirar} text='Withdraw'/>
 
-      <p style={{fontSize:'3rem',width:'50%',textAlign:'end',
-        display:'inline-block',marginLeft:'1%',
-        fontFamily:'monospace'}}>{staking} 
-      </p>
+      <NumeroEstrellas size='45' color='gold' item={item}/>
 
-      <div style={{display:'inline-block',width:'45%',
-        marginLeft:'1%'}}>
-        <img src={Hashi} style={{width:'100%'}} />
-        <p style={{fontSize:'1.8rem'}}>HASHI´s</p>
+      <HashimaSprite scale={6} item={item}/> 
+
+      
+      <div style={{width:'fit-content',display:'block'}}>
+
+        <p style={{fontSize:'2.2rem',width:'100%',textAlign:'center',
+          display:'inline-block',marginLeft:'1%',
+          fontFamily:'monospace'}}>
+            {SeparadorDecimal(TransformWei(staking).toString().substring(0,9))}
+            
+            <Button 
+            padding='0%'
+            onClick={CollectStake}
+            color1='hotpink'
+            display='flex'
+            marginLeft='auto'
+            color2='navy'
+            text='Collect'
+            secundaryText='Withdraw your $HASHI only'/>     
+        </p>
+
+        <div style={{display:'inline-block',width:'100%',
+          marginLeft:'1%'}}>
+
+
+            {loading?<Loading1
+            color1='skyblue'
+            color2='blue'
+            color3='navy' 
+            width='100px' height='100px' />
+            :
+            <img src={Hashi} style={{width:'20%',display:'block',margin:'auto'}} />
+            }
+
+            <p style={{fontSize:'1.8rem',width:'fit-content',
+            display:'block',margin:'auto',fontFamily:'monospace'}}>HASHI´s</p>
+
+        </div>
+
+
       </div>
 
-      <button onClick={CollectStake}>Collect</button>
+      </>
+      :
+    <RetiroExitoso height='65vh'/>
+            
+    }
+  </Div2>
 
-      <button onClick={Retirar}>Retirar Staking</button>
-      </div>
-  </Div>
 }
 
 export default StakingCard;

@@ -1,13 +1,44 @@
-import React, { useEffect } from 'react'
-import Eth from '../image/ethereum_1.png'
-import Polygon from '../image/polygon_1.png'
-import Avalanche from '../image/avalanche_1.png'
-import Binance from '../image/binance_1.png'
+import React, { useEffect,useState } from 'react'
+import Eth from '../../image/ethereum_1.png'
+import Polygon from '../../image/polygon_1.png'
+import Avalanche from '../../image/avalanche_1.png'
+import Binance from '../../image/binance_1.png'
 import styled from 'styled-components'
+import Button from '../Button/Button'
 
 
 
 function Cadenas({chainId}) {
+
+    const [hasWallet, setHasWallet] = useState(true)
+
+    useEffect(async() => {
+        const _bol=await Check()
+        setHasWallet(_bol)
+    }, [])
+
+
+    const Check=async()=>{
+        var resFinal=true
+        try {          
+        if (window.ethereum !== 'undefined') {
+            await window.ethereum
+           .request({ method: 'eth_accounts' })
+           .then(accounts=>{
+             if (accounts.length === 0) {
+               // MetaMask is locked or the user has not connected any accounts
+               resFinal=false            
+             }
+    
+           })
+          }
+          
+        } catch (error) {
+            console.log('error conexion web3 BotonConnectWallet.jsx: ',error.message)
+            resFinal=false
+        }
+        return resFinal
+    }
 
     var array=[
         {name:'Ethereum', id:'0x1',image:Eth},
@@ -15,7 +46,7 @@ function Cadenas({chainId}) {
         {name:'Polygon', id:'0x89',image:Polygon},
         {name:'Avalanche', id:'0xa86a',image:Avalanche},
         {name:'ETH', id:'0x539',image:Eth},
-        {name:'Smart Chain', id:'0x61',image:Binance},
+        {name:'Testnet Smart Chain', id:'0x61',image:Binance},
 
     ]
 
@@ -81,35 +112,30 @@ function Cadenas({chainId}) {
         
     `
 
-    const Boton=styled.button`
-    background: hotpink;
-    font-size: 1.5rem;
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 1% 0%;
-    border-radius: 5%;
-    transition: all 1s ease-in-out;
-
-    &:hover{
-        background: purple;
-        transition: all 1s ease-in-out;
-        border-radius: 10%;
-    }
-    `
 
 
 
     const CambiarChain=async()=>{
-       
+       try {
         await window.ethereum.request({ method: 'wallet_switchEthereumChain', params:[{chainId: '0x38'}]});
+ 
+       } catch (error) {
+           
+       }
             
     }
 
     return (
-        <div style={{display:'inline-block',width:'26%'}}>
+        <div style={{display:hasWallet?'inline-block':'none',width:'26%'}}>
         
-            {chainId!='0x38'?<Boton 
-            onClick={CambiarChain}>Change Blockchain</Boton>:
+            {chainId!='0x38'?<Button 
+            text='Wrong Chain'
+            fontSize='1.6rem'
+            color1='red'
+            color2='crimson'
+            onClick={CambiarChain}> 
+            {/* <img src={Binance} width='10%' /> */}
+            </Button>:
             <>
             {array.map((item,index)=>
             <Div 

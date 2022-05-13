@@ -2,49 +2,61 @@ import React, { useEffect, useState } from 'react';
 import { GiConfirmed } from 'react-icons/gi';
 import { GrStakeholder } from 'react-icons/gr';
 import styled from 'styled-components';
-import { dameCurrentChain } from '../blockchain/Blockchain';
-import { ObjetoHashima } from '../blockchain/HashimaContract';
-import { actulizarCuenta } from '../blockchain/Pago';
-import { ObjetoStaking } from '../blockchain/Staking';
+import { dameCurrentChain } from '../../blockchain/Blockchain';
+import { ObjetoHashima } from '../../blockchain/HashimaContract';
+import { actulizarCuenta } from '../../blockchain/Pago';
+import { ObjetoStaking } from '../../blockchain/Staking';
+import Loading1 from '../animations/loading/Loading1';
 
-function BotonStake({item,CheckLoading,setLoading}) {
-    const [staking, setstaking] = useState(0);
+function BotonStake({
+    item,
+    CheckLoading,
+    loading,
+    setLoading,
+    HandleIndexing}) {
     const [approve, setapprove] = useState(false);
+    const [loadingApprove, setLoadingApprove] = useState(false);
+    const [loadingStaking, setLoadingStaking] = useState(false);
     
     useEffect(async() => {
         let con=new ObjetoStaking()
         await con.loadStaking()
-        let acc=await actulizarCuenta()
-        let reward=await con.calculateReward(acc,item[0])
-        setstaking(reward)
-
+ 
     }, []);
     
 
     const Aprovar=async()=>{
-
+        setLoadingApprove(true)
         let con=new ObjetoStaking()
         let _state=await con.loadStaking()
-
         let chain=await dameCurrentChain()
         let hashi=new ObjetoHashima()
-        let contratoHashima=await hashi.loadHashima(chain)
+        await hashi.loadHashima(chain)
         let res=await hashi.aprovar(_state._address,item[0])
-      
-        if(res)setapprove(true)
+        
+        if(res){
+        setapprove(true)
+        setLoadingApprove(false)
+        }
+        if(!res)setLoadingApprove(false)
+            
         
     }
 
     const IniciarStake=async()=>{
+        setLoadingStaking(true)
         let con=new ObjetoStaking()
-        let _state=await con.loadStaking()
+        await con.loadStaking()
         let res=await con.depositarStake(item[0])
-        console.log('res stake: ',res)
+      
         if(res){
             setLoading(true)
+            setLoadingStaking(false)
+            HandleIndexing()
             await CheckLoading(true)
 
         }
+        if(!res)setLoadingStaking(false)
         
     }
   
@@ -64,33 +76,58 @@ function BotonStake({item,CheckLoading,setLoading}) {
         p{
             display: none;
         }
-/* 
+
         &:hover p{
-            display: block;
+            animation: 1s ease-in-out caca;
+            position: absolute;
+            color: white;
+            background: black;
+            font-family: monospace;
+            border-radius: 5%;
+            display: inline-flex;
+            font-size: 1.2rem;
+            padding: 1% 2%;
+            left: 100%;
             margin: auto;
-        } */
+        }
+
         &:hover{
            border-radius :20%; 
            border: 1px solid pink;
            transition: all ease-in-out 1s;
         }
+
+        @keyframes caca{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
         
     
     `
 
 
   return <>
-  {!approve&&
-  <Button1  onClick={Aprovar}>
-      <GrStakeholder size={50}/>
-      <p style={{fontSize:'0.8rem'}}>Stake</p>
-      </Button1>}
+  {!approve&&!loadingApprove&&
+  <>
+        <Button1  onClick={Aprovar}>
+        <GrStakeholder size={50}/>
+        <p>staking</p>
+        </Button1>
+        
+      </>}
 
-  {approve&&
+  {approve&&!loadingStaking&&!loading&&
   <Button1 onClick={IniciarStake}>
   <GiConfirmed size={50} color='green'/>
-  <p style={{fontSize:'0.8rem'}}>Confirm</p>
+  <p>Confirm</p>
   </Button1>}
+
+  {loadingApprove&&<Loading1 color1='green' color2='lightgreen' color3='olive' display='inline-flex' width='50px' height='50px'/>}
+  {loadingStaking&&<Loading1 color1='white' color2='red' color3='orange' display='inline-flex' width='50px' height='50px'/>}
 
    
   </>

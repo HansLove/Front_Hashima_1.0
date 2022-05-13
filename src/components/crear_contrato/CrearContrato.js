@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import { AprovarGasto, loadHashLockContract} from '../blockchain/HashLock'
-import { actulizarCuenta } from '../blockchain/Pago'
+import { AprovarGasto, loadHashLockContract} from '../../blockchain/HashLock'
+import { actulizarCuenta } from '../../blockchain/Pago'
 import './estilo.css'
 
 

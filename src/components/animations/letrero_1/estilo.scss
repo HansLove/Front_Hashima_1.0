@@ -10,14 +10,11 @@
   overflow:hidden;
 
 
-  @media (max-width:700px){
-    // display: none;
-    
+  @media (max-width:700px){    
     font-size: 3.5rem;
     z-index: 1;
   }
   @media (max-width:360px){
-    // display: none;
   
     font-size: 3rem;
     z-index: 1;

@@ -6,7 +6,8 @@ export const Nav=styled.nav`
     display: flex;
     width: 100%;
     justify-content: space-between;
-    background: linear-gradient(-45deg,purple,transparent,navy);
+    height: 8vh;
+    
 
 `
 

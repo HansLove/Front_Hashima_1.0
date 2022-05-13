@@ -3,7 +3,10 @@ import { GiCubes } from 'react-icons/gi'
 import styled from 'styled-components';
 
 
-function NumeroBloque({item,display='block',marginLeft='1%',size=50,
+function NumeroBloque({
+  item,
+  blockNumber=0,
+  display='block',marginLeft='1%',size=50,
     width='30%',fontSize='1.3rem'}) {
 
       const Div=styled.div`
@@ -31,7 +34,7 @@ function NumeroBloque({item,display='block',marginLeft='1%',size=50,
       <GiCubes color={'white'} size={size} style={{display:'inline-block'}}/>
           <h2
           style={{display:'inline-block',fontSize:fontSize,width:'65%'}}>
-              {SeparadorDecimal(item['blockNumber'])}
+              {SeparadorDecimal(blockNumber)}
               <p>(Block number)</p>
           </h2>
           

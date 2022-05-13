@@ -1,9 +1,9 @@
 import React from 'react'
-import Instagram from '../image/instagram_1.png'
-import Twitter from '../image/twitter_1.png'
-import Reddit from '../image/reddit_1.png'
-import Telegram from '../image/telegram_3.png'
-import Youtube from '../image/youtube.png'
+import Instagram from '../../image/instagram_1.png'
+import Twitter from '../../image/twitter_1.png'
+import Reddit from '../../image/reddit_1.png'
+import Telegram from '../../image/telegram_3.png'
+import Youtube from '../../image/youtube.png'
 import './estilo.scss'
 
 

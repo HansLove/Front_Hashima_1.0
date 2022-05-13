@@ -1,42 +1,14 @@
-import React,{ useEffect, useState} from 'react'
+import React from 'react'
 import Cadenas from '../cadenas/Cadenas.jsx'
-import {Nav,NavLink,
-Bars,NavMenu,Button1, NavBtnLink} from './Style_1.js'
-import Logo from '../image/logo_1.png'
+import {Nav,NavLink,NavMenu} from './Style_1.js'
+import Logo from '../../image/logo_hashima_white_2.png'
+import BotonConnectWallet from '../BotonConnectWallet/BotonConnectWallet.jsx'
+import ButtonLaser from '../Button/ButtonLaser/ButtonLaser.jsx'
 
 
 function StyleNav({setScreen,chainId}) {
 
-
-    const [visible, setVisible] = useState(false)
-
-    const Check=async()=>{
-        var resFinal=true
-
-        if (window.ethereum !== 'undefined') {
-            console.log('window es diferente')
-            await window.ethereum
-           .request({ method: 'eth_accounts' })
-           .then(accounts=>{
-             if (accounts.length === 0) {
-               // MetaMask is locked or the user has not connected any accounts
-               resFinal=false            
-             }
-            
-    
-           })
-          }
-        return resFinal
-    }
-
-
-    useEffect(async() => {
-        const _bol=await Check()
-        setVisible(!_bol)
-    }, [])
-
     return (
-        
         <Nav>
         <NavMenu>     
 
@@ -44,42 +16,46 @@ function StyleNav({setScreen,chainId}) {
             onClick={()=>setScreen(0)}
             to='/home' activeStyle>
             
-            <img width='30%' src={Logo}></img>
+            <img width='100vh' height='100%' src={Logo}/>
+            
             </NavLink>
             
 
-            <NavLink 
+            <NavLink
+            style={{marginLeft:'40%'}} 
             onClick={()=>setScreen(0)}
             to='/home' activeStyle>
-            Home
+            <ButtonLaser
+            color='skyblue'
+            texto='Home'/>
+            
             </NavLink>
         
             <NavLink 
             onClick={()=>setScreen(1)}
             to='/cards' activeStyle>
-            Hashimas
+            Mining
             </NavLink>
 
             <NavLink 
             onClick={()=>setScreen(1)}
             to='/marketplace' activeStyle>
-            Market Place
+            <ButtonLaser
+            texto='Market Place'/>
             </NavLink>
 
 
             <NavLink 
             onClick={()=>setScreen(2)}
             to='/collection' activeStyle>
-                My Collection
+            <ButtonLaser
+            color='orange'
+            texto='My Collection'/>
+                
             </NavLink>
             
-  
-
-            {visible&&
-            <Button1 onClick={async()=>await window.ethereum.request({ method: 'eth_requestAccounts' })}>Conect Wallet</Button1>
-            }
-
-
+            <BotonConnectWallet/>
+           
             <Cadenas chainId={chainId}/>
 
       
@@ -87,7 +63,6 @@ function StyleNav({setScreen,chainId}) {
 
         </NavMenu>
        
-        
         </Nav>
             
        

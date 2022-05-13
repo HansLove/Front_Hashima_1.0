@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Loading1 from '../animations/loading/Loading1';
-import { dameCurrentChain } from '../blockchain/Blockchain';
-import { ObjetoHashima } from '../blockchain/HashimaContract';
-import Loading from '../loading_anim/Loading';
+import { ObjetoHashima } from '../../blockchain/HashimaContract';
+import Loading2 from '../animations/loading/Loading2/Loading2';
 
-function BotonComprar({item={forSale:true},Reload,Display='block'}) {
+function BotonComprar({item={forSale:true},
+  Reload=()=>{},
+  Display='block'}) {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
@@ -44,7 +44,6 @@ function BotonComprar({item={forSale:true},Reload,Display='block'}) {
     <>
   {!loading&&
   <Button
-  // className='boton_hashima_disponible'
   onClick={item['forSale']?
   ()=>{
       setLoading(true)
@@ -59,7 +58,7 @@ function BotonComprar({item={forSale:true},Reload,Display='block'}) {
   {item['forSale']?'Buy':'Not Avaliable'}
   </Button>}
   {loading&&
-  <Loading/>}</>
+  <Loading2/>}</>
   }
   </>
 }

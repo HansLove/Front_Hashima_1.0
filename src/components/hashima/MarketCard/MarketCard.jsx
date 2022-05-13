@@ -1,77 +1,27 @@
 import React,{useEffect, useState} from 'react'
 import styled from 'styled-components'
-import Type from '../type/Type'
 import Successful_1 from '../../poster/Successful/Successful_1'
-import Loading from '../../loading_anim/Loading'
 import CurrentCoin from '../../coins/CurrentCoin'
 import './estilo.scss'
 import NumeroEstrellas from '../NumeroEstrellas'
 import NumeroBloque from '../NumeroBloque'
-import BotonAvaliable from '../BotonAvaliable'
 import HashimaSprite from '../../sprites/HashimaSprite'
-import { DatosHashima } from '../../utils/Utils'
-import { TransformWei } from '../../blockchain/Blockchain'
+import { DatosHashima } from '../../../utils/Utils'
+import { TransformWei } from '../../../blockchain/Blockchain'
 import Loading1 from '../../animations/loading/Loading1'
+import ButtonMakeOffer from '../../ButtonMakeOffer/ButtonMakeOffer'
+import BotonComprar from '../BotonComprar'
+import Loading2 from '../../animations/loading/Loading2/Loading2'
+import {Div3 } from '../../StyledDiv/StyledDiv'
 
 
-
-const Figure=styled.figure`
-  background: linear-gradient(110deg,${props=>props.color1} 0%, ${props=>!props.original?props.color2:'#e4d01b'});
-  vertical-align:top;
-  border-radius: 15px;
-  margin: auto;
-  margin-bottom:1%;
-  /* text-align: left; */
-  box-shadow: 1px 5px 20px -5px ${props=>!props.original?'transparent':'yellow'};
-  position: relative;
-  transition: all ease-in 0.5s;
-
-
-  @media (min-width: 360px) { 
-      width: 80%;
-      display: block;
-      margin: auto;
-      min-height: 30vh;
-      margin-top: 3%;
-        
-      
-  }
-
-  @media (min-width: 1000px) { 
-      width: 32%;
-      min-height: 60vh;
-      max-height: 80vh;
-      display: inline-block;
-      margin-left: 0.5%;
-      margin-top:1%;
-      margin-bottom:0.5%;
-      
-      &:hover{
-        border:3px solid ${props=>!props.original?'transparent':'gold'};
-        transition: all 0.2s ease-in 1s;
-        
-        }
-        
-  }
-
-  &:hover{
-    transition: all 0.5s ease-in-out 1s;
-    box-shadow: 1px 5px 20px 0px ${props=>!props.original?'transparent':'yellow'};
-
-}
-
-
-`
-
-
-function MarketCard({item,account='0x00000',}) {
+function MarketCard({item,account='0x00000'}) {
 
     const [success, setSuccess] = useState(false)
     const [data, setData] = useState({
         fire:'',
         look:{color:['transparent','black']}
     })
-    // const [original, setOriginal] = useState(false)
     const [loading, setLoading] = useState(true)
 
 
@@ -95,27 +45,29 @@ function MarketCard({item,account='0x00000',}) {
 
 
     return (
-    <Figure className='main_div_battle_card'
-    color1={data.look.color[0]} color2={data.look.color[1]} original={item['sign']}>
+    <Div3 
+    className='main_div_battle_card'
+    color1={data.look.color[0]} 
+    color2={data.look.color[1]} 
+    original={item['sign']}>
     
     <NumeroEstrellas 
     marginLeft='1%' item={item} width='55%' display='inline-block'/>
     <NumeroBloque fontSize='1.4rem'  display='inline-block' item={item} size={26}/>
 
+    <ButtonMakeOffer item={item[0]}/>
+
     <>
         {!loading?
-        <HashimaSprite display='block' width='99%' item={item} data={data}/> 
+        <HashimaSprite
+        onClick={()=>{}}
+         display='block' width='99%' item={item} data={data}/> 
         :
-        <Loading1/>}
+        <Loading2 image={false}/>}
 
-        <div style={{display:'block',width:'100%'}}>
-    
-
-        <p className="card__name">{data.name}</p>
-
-        <>
-
-        {item['forSale']&&<div style={{width:'45%',display:'inline-block'}}
+        {item['forSale']&&
+        <div 
+        style={{width:'45%',display:'inline-flex'}}
         className="div_price_battle_card">
 
             <p style={{fontFamily:'Impact, Haettenschweiler, Arial Narrow Bold,sans-serif',
@@ -127,26 +79,18 @@ function MarketCard({item,account='0x00000',}) {
         </div>
         }
 
+
+        <div style={{display:'inline-flex',width:'40%'}}>
+    
         {item['currentOwner']!=account&&!success&&
-        <BotonAvaliable display='inline-block' width='35%'  setLoading={setLoading} 
+        <BotonComprar 
+        display='flex' 
+        width='45%'  
+        setLoading={setLoading} 
         setSuccess={setSuccess} item={item}/>}
-        </>
 
-        {/* <div style={{width:'45%',}}
-        className='div_types_card'>
-            {DatosHashima(item[2]).type.map((type,number)=>  
-                <Type
-                largo='40%'
-                left='2%'
-                height='2vh'
-                fontSize='1rem'
-                marginTop='1%'
-                key={number}
-                type={type}/>
-            )}
-        </div> */}
-
-
+        <p className="card__name">{data.name}</p>
+        
 
 
         </div>
@@ -155,7 +99,7 @@ function MarketCard({item,account='0x00000',}) {
     {success&&
     <Successful_1/>}
 
-    </Figure>
+    </Div3>
 
     )
 }

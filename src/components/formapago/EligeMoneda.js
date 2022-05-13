@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import ImgDai from '../image/dai_1.png'
+import ImgDai from '../../image/dai_1.png'
 import Elemento from './elemento/Elemento'
 import CrearContrato from '../crear_contrato/CrearContrato'
-import { daiAddress, loadDai } from '../blockchain/Dai'
+import { daiAddress, loadDai } from '../../blockchain/Dai'
 
 
 function EligeMoneda({estrellas,minerAddress,firma,setContractId}) {

@@ -1,0 +1,17 @@
+.img_style_1{
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+
+}
+.img_style_1:hover{
+    transition: all 0.5s ease-in-out;
+    border: 2px solid goldenrod;
+
+}
+
+.input_estilo_1{
+    font-family: monospace;
+    border-radius: 10%;
+    border: 1px solid salmon;
+
+}

@@ -1,0 +1,31 @@
+.div_main_bid{
+    background: black;
+    position: absolute;
+    border-radius: 10%;
+    animation: caca 1s ease-in-out;
+    margin-left: 5%;
+}
+
+@keyframes caca {
+    0%{
+        opacity: 0;
+        
+    }
+    50%{
+        opacity: 0.6;
+        left: 2%;
+    }
+
+    100%{
+        opacity: 1;
+        margin-left: 5%;
+    }
+}
+
+.input_bid_1{
+    display: block;
+    border-radius: 5%;
+    margin:1%;
+    width: 50%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

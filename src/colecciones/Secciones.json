@@ -1,23 +1,25 @@
 [
     {
-        "name":"Piramidals",
-        "list":[7,2,3,11,5,6],
+        "name":"Nakamotos",
+        "list":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+        "about":"Main developer of Hashima proyect",
+        "imagen":"https://firebasestorage.googleapis.com/v0/b/taloon-2fb00.appspot.com/o/Fotos%20personas%2FAaron_1.png?alt=media&token=74377691-c115-4881-aa09-138a7eba2b0d",
         "color":["gold"]
     },
 
-    {
-        "name":"Bubbles",
-        "list":[8,9,10],
-        "color":["skyblue"]
-    },
 
-    {"name":"Alejandra Tarello",
-    "list":[20,21,22],
-    "color":["purple"]
+    {
+        "name":"Alejandra Tarello",
+        "imagen":"https://firebasestorage.googleapis.com/v0/b/taloon-2fb00.appspot.com/o/Fotos%20personas%2FAlejandraTarello1.jpeg?alt=media&token=3f5fca45-7692-498e-b0f9-499790768087",
+        "list":[20,21,22],
+        "color":["purple"],
+        "about":"She is an Mexican Artist jumping in the Hashima City metaverse. With more than 10 years of experience in visual work and marketing, Alejandra became an Hashima Artist and now you will have access to heir cool Hashimas"
     },
 
     {
         "name":"Beke Valero",
+        "imagen":"https://firebasestorage.googleapis.com/v0/b/taloon-2fb00.appspot.com/o/Fotos%20personas%2FBekeValero_1.jpeg?alt=media&token=afbee1a7-2ec0-4532-ae50-64094e12f0ae",
+        "about":"Very young but with a lot of experience in muralism, taking an traditional approch to the Hashima metaverse with some colorfull work.",
         "list":[23,24,25],
         "color":["olive"]
         },
@@ -25,12 +27,9 @@
 
     
     {   "name":"Chester",
+        "imagen":"https://firebasestorage.googleapis.com/v0/b/taloon-2fb00.appspot.com/o/Fotos%20personas%2FChester_1.jpeg?alt=media&token=29a71a5b-bfe7-4046-8bd2-b2e7042152b4",
         "list":[26,27,28,29],
-        "color":["orange"]
-    },
-
-    {   "name":"Not as Liquid",
-        "list":[15,16,17],
+        "about":"Chester is an Mexican NFT artistic with some amazing art work and characters for you. Sometimes funny, sometimes sad, but at the end you can feel the art in this amazings Hashimas. ",
         "color":["orange"]
     }
 ]

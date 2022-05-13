@@ -4,9 +4,9 @@ import ChileList from '../../colecciones/ChileList.json'
 import HeroesList from '../../colecciones/Heroes.json'
 import BekeValero from '../../colecciones/BekeValero.json'
 import Chester from '../../colecciones/Chester.json'
-import Hashima from '../hashima/ClasicCard/Hashima'
 import PickCollections from '../pick_collection/PickCollections'
 import EstandarCard from '../hashima/EstandarCard/EstandarCard'
+import ClassicCard from '../ClasicCard/ClassicCard'
 
 
 function Generador({setHashima}) {
@@ -25,8 +25,8 @@ function Generador({setHashima}) {
            {ListaActual().map((pex,index)=>
             <>
             {coleccion==0?
-            <Hashima key={index}
-            setHashima={setHashima} hashima={pex}></Hashima>
+            <ClassicCard key={index}
+            setHashima={setHashima} hashima={pex}></ClassicCard>
                 :
             <EstandarCard color2={coleccion==1?'lightgreen':'darkorange'}
             color1={coleccion==1?'blue':'purple'}

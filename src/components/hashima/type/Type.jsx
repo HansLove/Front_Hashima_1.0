@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Hashima_types } from '../../tools/Types';
 import styled from 'styled-components'
-import { FaFire } from 'react-icons/fa';
 
 
 function Type({display='inline-block',
@@ -35,12 +34,12 @@ function Type({display='inline-block',
  
     }
 
-    h1{
+    p{
         display: none;
     }
-    &:hover h1{
+    &:hover p{
         display: block;
-        font-size: 1rem;
+        font-size: 0.5rem;
         margin: auto;
         width: fit-content;
         animation: caca 1s ease-in-out;
@@ -87,11 +86,11 @@ function Type({display='inline-block',
     return (
         <DivType color1={state.color1} color2={state.color2}
         >
-            <NiceP style={{color:state.color3}}>
+            <NiceP style={{color:state.color3,fontSize:'1rem'}}>
                 {/* {type} */}
                 {state.icon}
             </NiceP>
-            <h1>{type}</h1>
+            <p>{type}</p>
             
         </DivType>
     )

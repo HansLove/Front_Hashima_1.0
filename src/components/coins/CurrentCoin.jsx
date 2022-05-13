@@ -1,15 +1,17 @@
 import React,{useEffect, useState} from 'react'
-import Ether from '../image/ethereum_1.png'
-// import Bitcoin from '../image/bitcoin_1.png'
-import Polygon from '../image/polygon_1.png'
-import Avalanche from '../image/avalanche_1.png'
-import Binance from '../image/binance_1.png'
-import { dameCurrentChain} from '../blockchain/Blockchain'
+import Ether from '../../image/ethereum_1.png'
+import Polygon from '../../image/polygon_1.png'
+import Avalanche from '../../image/avalanche_1.png'
+import Binance from '../../image/binance_1.png'
+import { dameCurrentChain} from '../../blockchain/Blockchain'
 import styled from 'styled-components'
 
 //esta funcion debe ser capaz de detectcar la blockchain.
-function CurrentCoin({setChange,change,largo,color='transparent',
-  left='0%'}) {
+function CurrentCoin({
+  setChange=()=>{},
+  change,
+  largo,
+  color='transparent'}) {
 
     const [chain, setChainId] = useState('')
     
@@ -42,17 +44,17 @@ function CurrentCoin({setChange,change,largo,color='transparent',
           onClick={()=>setChange(!change)}
           key={index}
           style={{width:'95%',visibility:item.id==chain?'visible':'hidden',
-          display:item.id==chain?'block':'none'
-        }}
+          display:item.id==chain?'block':'none'}}
           src={item.image}/>
-        <h1 
-        style={{
-            textAlign:'center',
-            width:'85%',visibility:item.id==chain?'visible':'hidden',
-            textAlign:'center',
-            fontSize:'1rem',color:'white',margin:'auto',
-            display:item.id==chain?'block':'none'
-        }}>{item.name}</h1>
+
+          <h1 
+          style={{
+              textAlign:'center',
+              width:'85%',visibility:item.id==chain?'visible':'hidden',
+              textAlign:'center',
+              fontSize:'1rem',color:'white',margin:'auto',
+              display:item.id==chain?'block':'none'
+          }}>{item.name}</h1>
         </>
                
           )} 

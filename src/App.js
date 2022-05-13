@@ -7,18 +7,16 @@ import {
 } from "react-router-dom";
 import StyleNav from './components/navbar/StyleNav';
 import { useEffect, useState } from 'react';
-import Home from './components/home/Home';
 import styled from 'styled-components';
 import WhitePaper from './components/white_paper/WhitePaper';
-import RoadMap from './components/roadMap/RoadMap';
-import Wallet from './components/wallet/Wallet';
-import SingleView from './components/single_view/SingleView';
-import Collection from './components/collection/Collection';
-import BeMiner from './components/beMiner/BeMiner';
-import MarketPlace from './components/marketplace/MarketPlace';
-import {dameCurrentChain, prenderCambioCadena, prenderCambioCuenta } from './components/blockchain/Blockchain';
-import { actulizarCuenta, loadHashima } from './components/blockchain/Pago';
+import RoadMap from './pages/roadMap/RoadMap';
+import MarketPlace from './pages/marketplace/MarketPlace';
+import {dameCurrentChain, prenderCambioCadena, prenderCambioCuenta } from './blockchain/Blockchain';
+import { actulizarCuenta } from './blockchain/Pago';
 import ShowCase from './components/showcase/ShowCase';
+import Home from './pages/home/Home';
+import ArtistCollection from './pages/artistCollection/ArtistCollection';
+import Collection from './pages/collection/Collection';
 
 
 const Div=styled.div`
@@ -32,7 +30,8 @@ function App() {
   const [screen, setScreen] = useState(0)
   const [chainId, setChainId] = useState('')
   const [account, setAccount] = useState('')
-  const [contrato, setContrato] = useState({})
+  // const [contrato, setContrato] = useState({})
+  const [visibleMenu, setVisibleMenu] = useState(true)
 
   useEffect(async() => {
     //Esta es la configuracion incial de Hashimas
@@ -45,11 +44,12 @@ function App() {
     await prenderCambioCadena(setChainId)
   }, [])
 
-  useEffect(async() => {
-    var _contrato=await loadHashima(chainId)
-    setContrato(_contrato)
+  // useEffect(async() => {
+  //   let objeto=new ObjetoHashima()
+  //   var _contrato=await objeto.loadHashima()
+  //   setContrato(_contrato)
 
-  }, [chainId])
+  // }, [chainId])
 
   // const Video=()=>{
   //   return<video 
@@ -67,36 +67,31 @@ function App() {
     <Div screen={screen}>
       {/* <Video/> */}
       <BrowserRouter>
+
+      {visibleMenu&&
       <StyleNav 
       chainId={chainId}
-      setScreen={setScreen}></StyleNav>
+      setScreen={setScreen}/>}
+
       <Routes>
 
-      <Route exact path='/cards' element={<Mineria setHashima={setHashima}/>}></Route>
+      <Route exact path='/cards' element={<Mineria 
+      setHashima={setHashima}/>}></Route>
       <Route exact path='/home' element={<Home/>}></Route>
-      <Route exact path='/marketplace' element={<MarketPlace 
-      account={account}
-      contrato={contrato} chainId={chainId}/>}></Route>
+      <Route exact path='/marketplace' element={<MarketPlace/>}/>
 
       <Route exact path='/' element={<Home/>}></Route>
       <Route path='/whitepaper' element={<WhitePaper/>}></Route>
 
       <Route path='/roadmap' element={<RoadMap/>}></Route>
-      <Route path='/beminer' element={<BeMiner/>}></Route>
-
-      
-      <Route path='/wallet' element={<Wallet/>}></Route>
-      {/* <Route path='/workshop/' element={<WorkShop/>}></Route> */}
-
-      <Route path='/hashi/' element={<SingleView 
-      account={account} contrato={contrato} 
-      chainId={chainId} hashima={hashima}/>}></Route>
-
       <Route path='/showcase/:id' element={<ShowCase/>}></Route>
+      <Route path='/room/:name' element={<ArtistCollection setVisibleMenu={setVisibleMenu}/>}></Route>
+
       <Route path='/collection/showcase/:id' element={<ShowCase/>}></Route>
       <Route path='/marketplace/showcase/:id' element={<ShowCase/>}></Route>
 
-      <Route path='/collection' element={<Collection account={account} contrato={contrato} chainId={chainId}></Collection>}></Route>
+      <Route path='/collection' element={<Collection account={account} 
+      chainId={chainId}></Collection>}></Route>
 
 
 
